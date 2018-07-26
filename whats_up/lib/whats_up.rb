@@ -1,5 +1,15 @@
-require "whats_up/version"
+#environment file
 
 module WhatsUp
   # Your code goes here...
 end
+
+require 'nokogiri'
+require 'open-url'
+require 'pry'
+require_relative "./whats_up/version" #require elative is for files within. Require is for files outside the gem
+require_relative "./whats_up/CLI"
+require_relative "./whats_up/news"
+
+
+

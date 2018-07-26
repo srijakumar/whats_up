@@ -1,3 +1,8 @@
 #!/usr/bin/env ruby
 
-puts "Hello world"
+#puts "Hello world"
+#execute using ../whats_up/bin/whats_up
+
+require_relative '../lib/whats_up'
+
+CLI.new.start
