@@ -1,11 +1,11 @@
-class 
+class News
   attr_accessor :title, :author, :url, :description
   
-  
-  #class  "chain-content no-skin clear"
-  
-  #div id "post-most-rr"
-  #class 
+  def initialize(title, url)
+    @url = url
+    @title = title
+  end
+ 
   
   
 end
