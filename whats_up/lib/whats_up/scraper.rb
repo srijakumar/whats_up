@@ -1,4 +1,4 @@
-class Scraper
+class WhatsUp::Scraper
   
   BASE_URL = "https://www.washingtonpost.com/regional/"
   def self.scrape_news
@@ -8,6 +8,7 @@ class Scraper
     doc.css('.skin skin-card large def-feed pm-content').each do |news_doc|
       title = news_doc.css("pm-content a headline").text
       url = news_doc.css("pm-content a").attribute("href").value
+      binding.pry
       News.new(title, url)
       #headlines << {title: title, url: url}
     end

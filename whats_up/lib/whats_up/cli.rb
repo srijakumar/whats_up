@@ -1,6 +1,6 @@
 #interacting with the user
 
-class CLI
+class WhatsUp::CLI
   
   def start
       puts "What's up with your city?"
