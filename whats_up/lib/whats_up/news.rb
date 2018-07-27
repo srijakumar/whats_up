@@ -1,4 +1,4 @@
-class News
+class WhatsUp::News
   attr_accessor :title, :author, :url, :description
   
   def initialize(title, url)

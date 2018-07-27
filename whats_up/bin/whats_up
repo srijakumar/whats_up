@@ -5,4 +5,4 @@
 
 require_relative '../lib/whats_up'
 
-CLI.new.start
+WhatsUp::CLI.new.start
