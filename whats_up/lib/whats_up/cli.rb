@@ -7,16 +7,18 @@ class WhatsUp::CLI
       puts ""
 
       #displays a list of headlines
+
       WhatsUp::Scraper.scrape_news
       display_headlines
   end
 
   def display_headlines
     puts "Here are the most read news headlines for today!"
+
     news_array = WhatsUp::News.all
 
-    news_array.each.with_index(1) do|news|
-      puts "#{index}. #{News.title}"
+    news_array.each.with_index(1) do|news, index|
+      puts "#{index}. #{WhatsUp::News.title}"
     end
 
     puts""
@@ -27,6 +29,13 @@ class WhatsUp::CLI
 
     news = WhatsUp::news.all[index]
 
+    WhatsUp::Scraper.scrape_news_details(news)
+
+    puts "Here is the article:"
+    puts News.author
+    puts News.description
+
+    display_headlines
   end
 
 
