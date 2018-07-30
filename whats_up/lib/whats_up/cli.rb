@@ -22,11 +22,18 @@ class WhatsUp::CLI
     input = gets.strip
     index = input.to_i - 1
     news = WhatsUp::news.all[index]
-    WhatsUp::Scraper.scrape_news_details(news)
+
+    if !news.author || !news.description
+      WhatsUp::Scraper.scrape_news_details(news)
+    end
+
+  #  WhatsUp::Scraper.scrape_news_details(news)
     puts "Here is the article:"
-    puts News.author
-    puts News.description
+    puts news.author
+    puts news.description
     display_headlines
   end
+
+#Build a method to exit out the program if user types in  "exit"
 
 end
