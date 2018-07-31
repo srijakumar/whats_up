@@ -17,9 +17,10 @@ class WhatsUp::Scraper
   def self.scrape_news_details(news)
     url = news.url
     doc = Nokogiri::HTML(open(url))
-    news.author = doc.css('a span').text
-    news.description = doc.css('.dateline').text.strip
-      binding.pry
+    news.author = doc.css('a span[itemprop = "name"]').text
+    news.description = doc.css('p[data-elm-loc]').text
+
+
     #get author name and get description
   end
 

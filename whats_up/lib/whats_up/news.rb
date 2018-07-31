@@ -14,3 +14,4 @@ class WhatsUp::News
 
 
 end
+
