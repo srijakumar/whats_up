@@ -20,12 +20,11 @@ class WhatsUp::CLI
       end
     puts""
     puts "Please input 1-5 select a headline to read the article or input exit to quit the application"
-    input = gets.strip.to_i
-    index = input - 1
+    input = gets.strip
+    index = input.to_i - 1
 
-    if (input<=1) || (input>=5) 
+    if (index<=0) || (input>=4) 
       puts "Please input a number between 1 - 5"
-        display_headlines
     end
 
     if input=="exit"
