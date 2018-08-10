@@ -12,6 +12,25 @@ class WhatsUp::News
     @@all
   end
 
+  def self.search_description(keyword)
+    #return an array of all news article objects that contain keyword in the description
+    #return only one article in case of multiple hits
+    arr = []
+    #x = 0
+    # if WhatsUp::News.all[x] !== keyword
+    #  x += 1
+    # else
+    #  arr << @description
+    # end
+    #
+    # "hello"
 
+    WhatsUp::News.all.each do |article|
+      if article.description.include?(keyword)
+        arr << article
+      end
+    end
+  arr
 end
 
+end
